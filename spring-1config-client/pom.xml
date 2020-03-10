@@ -13,7 +13,7 @@
     <parent>
         <groupId>systems.bos</groupId>
         <artifactId>spring-1config-parent</artifactId>
-        <version>0.0.1</version>
+        <version>${revision}</version>
     </parent>
 
     <dependencies>
