@@ -1,0 +1,9 @@
+foo: default
+
+server:
+  port: 8195
+
+spring:
+  application:
+    name: spring-1config-sample
+    version: '@project.version@'
