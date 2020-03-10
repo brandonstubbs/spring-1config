@@ -72,6 +72,14 @@
                 <artifactId>flatten-maven-plugin</artifactId>
                 <version>${flatten-maven-plugin.version}</version>
                 <configuration>
+                    <pomElements>
+                        <scm></scm>
+                        <developers></developers>
+                        <description></description>
+                        <name></name>
+                        <url></url>
+                        <issueManagement></issueManagement>
+                    </pomElements>
                 </configuration>
                 <executions>
                     <execution>
