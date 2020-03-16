@@ -21,7 +21,7 @@ import com.brunobonacci.oneconfig.client.OneConfigClient.ConfigEntry;
 
 @Order(0)
 public class OneConfigPropertySourceLocator implements PropertySourceLocator {
-    private static final Log logger = LogFactory.getLog(OneConfigPropertySourceLocator.class);
+    private static final Log log = LogFactory.getLog(OneConfigPropertySourceLocator.class);
 
     private static final String PROPERTY_SOURCE = "OneConfigService";
     private static final String APPLICATION_NAME_PROPERTY = "spring.application.name";
@@ -41,17 +41,24 @@ public class OneConfigPropertySourceLocator implements PropertySourceLocator {
         }
 
         final String applicationName = environment.getProperty(APPLICATION_NAME_PROPERTY);
+        if (applicationName == null) {
+            throw new IllegalStateException("Could not get application name. Property " + APPLICATION_NAME_PROPERTY + " not set");
+        }
         final String version = environment.getProperty(APPLICATION_VERSION_PROPERTY);
+        if (version == null) {
+            throw new IllegalStateException("Could not get application version. Property " + APPLICATION_VERSION_PROPERTY + " not set");
+        }
 
-        logger.info(String.format("Attempting to get configuration for => applicationName: %s, environment: %s, version: %s", applicationName, env, version));
+        log.info(String.format("Attempting to get configuration for => applicationName: %s, environment: %s, version: %s", applicationName, env, version));
         final ConfigEntry config = OneConfigClient.configure(applicationName, env, version);
 
         if (config == null) {
-            logger.info("No configuration found");
+            log.info("No configuration found");
             return null;
         }
 
         switch (config.getContentType().toLowerCase()) {
+            case "yaml":
             case "json": {
                 final CompositePropertySource composite = new OriginTrackedCompositePropertySource(PROPERTY_SOURCE);
                 composite.addFirstPropertySource(new MapPropertySource("oneConfig-json", jsonToProperties(config.getValueAsJsonMap())));
