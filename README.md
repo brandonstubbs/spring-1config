@@ -31,9 +31,9 @@ spring.application.version=0.0.3
 |:version|spring.application.version|
 |:env    |*Active profile           |
 
-**Active profile* - spring-1config-client only supports one active [profile](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles).\
+***Active profile* - spring-1config-client only supports one active [profile](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles).\
 It is recommended to set this via the environment variable `SPRING_PROFILES_ACTIVE`, this will ensure that your application is only packaged with default configuration and environment specific configuration is retrieved from [1Config](https://github.com/BrunoBonacci/1config). \
-If no profile is found it will try and get configuration using the `local` env.
+If no profile is found it will try and get configuration using the `local` env.*
 
 ## Automatic property expansion
 If you want to automatically populate your properties file with your project version from your `pom.xml` or `build.gradle`. Please follow this article: https://www.baeldung.com/spring-boot-auto-property-expansion
