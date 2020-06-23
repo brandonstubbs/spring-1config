@@ -40,11 +40,11 @@
     </issueManagement>
 
     <properties>
-        <revision>0.0.5</revision>
+        <revision>0.0.6</revision>
         
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
