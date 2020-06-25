@@ -6,4 +6,4 @@ server:
 spring:
   application:
     name: spring-1config-sample
-    version: '@project.version@'
+    version: @project.version@
