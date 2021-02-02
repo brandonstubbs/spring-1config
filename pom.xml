@@ -51,7 +51,7 @@
         <spring-boot.version>2.4.2</spring-boot.version>
         <spring-cloud.version>2020.0.1</spring-cloud.version>
 
-        <one-config.version>0.16.1</one-config.version>
+        <one-config.version>0.17.1</one-config.version>
 
         <flatten-maven-plugin.version>1.2.1</flatten-maven-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
