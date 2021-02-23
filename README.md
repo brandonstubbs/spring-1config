@@ -14,7 +14,7 @@ Add the library to your pom.xml
 <dependency>
     <groupId>systems.bos</groupId>
     <artifactId>spring-1config-client</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.8</version>
 </dependency>
 ```
 
