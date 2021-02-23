@@ -48,10 +48,10 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
-        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <spring-boot-cloud.version>2.2.2.RELEASE</spring-boot-cloud.version>
+        <spring-boot.version>2.4.2</spring-boot.version>
+        <spring-cloud.version>2020.0.1</spring-cloud.version>
 
-        <one-config.version>0.16.1</one-config.version>
+        <one-config.version>0.21.0</one-config.version>
 
         <flatten-maven-plugin.version>1.2.1</flatten-maven-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -64,6 +64,18 @@
         <module>spring-1config-client</module>
         <module>spring-1config-sample</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
